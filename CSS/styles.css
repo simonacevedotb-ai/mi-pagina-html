@@ -1,0 +1,399 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #0d1117;
+    background-image:
+        radial-gradient(ellipse 80% 60% at 50% -10%,
+            rgba(56, 96, 180, 0.35) 0%,
+            transparent 70%),
+        radial-gradient(ellipse 50% 40% at 90% 90%,
+            rgba(30, 58, 120, 0.2) 0%,
+            transparent 60%);
+}
+
+h1 {
+    color: white;
+    font-family: sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    letter-spacing: 0.15em;
+    text-align: left;
+    position: relative;
+}
+
+p {
+    font-size: 1.1rem;
+    width: 100%;
+    color: #b0b8c1;
+}
+
+a {
+    color: rgb(148, 231, 233);
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+/* ══════════════════════════════════════
+TEXTO DECORATIVO DE FONDO
+   ══════════════════════════════════════ */
+body::before {
+    position: fixed;
+    bottom: -0.1em;
+    left: -0.05em;
+    font-size: clamp(4rem, 10vw, 9rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+.page-home::before       { content: "BIENVENID@S"; }
+.page-proyectos::before  { content: "PROYECTOS"; writing-mode: vertical-rl; transform: rotate(180deg); }
+.page-about::before      { content: "ACERCA DE MI"; }
+.page-contacto::before   { content: "CONTACTO"; }
+.page-curriculum::before { content: "CURRICULUM"; }
+.page-articulos::before  { content: "ARTICULOS"; }
+
+/* ══════════════════════════════════════
+LAYOUT
+   ══════════════════════════════════════ */
+header, main, footer {
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 7rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.inicio a {
+    padding: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 0;
+    padding: 3rem 15rem;
+}
+
+main p {
+    text-align: left;
+    max-width: 100%;
+    line-height: 2;
+}
+
+footer {
+    max-width: 100%;
+    margin: 0;
+    padding: 0rem 7rem 2rem 15rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+/* ══════════════════════════════════════
+ICONOS REDES SOCIALES
+   ══════════════════════════════════════ */
+header img {
+    width: 150px;
+}
+
+.icono-ig img,
+.icono-git img,
+.icono-face img {
+    width: 50px;
+}
+
+.acerca-de-mi img {
+    width: 20px;
+}
+.icono-ig,
+.icono-git,
+.icono-face {
+    display: inline-block;
+    transition: transform 0.3s;
+    width: 60px;
+}
+
+.icono-ig:hover,
+.icono-git:hover,
+.icono-face:hover {
+    transform: scale(1.2);
+}
+
+/* ══════════════════════════════════════
+FOOTER LINKS
+   ══════════════════════════════════════ */
+.div-ver-mi           { margin-bottom: 30px; }
+.div-vamos-curri      { margin-bottom: 30px; margin-top: 30px; }
+.div-articulos-contac { margin-bottom: 30px; }
+
+/* ══════════════════════════════════════
+PROYECTOS
+   ══════════════════════════════════════ */
+.main-proyectos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width:900px;
+    margin: 0 auto;
+    padding: 3rem 15rem;
+}
+
+.filtros-proyectos,
+.filtros-articulos {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.filtros-proyectos button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #b0b8c1;
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.filtros-proyectos button:hover,
+.filtros-proyectos button.activo {
+    background: rgba(255,255,255,0.1);
+    color: #ffffff;
+    border-color: rgba(255,255,255,0.4);
+}
+
+.proyectos-simon {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.div-tarjeta {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.div-tarjeta:hover {
+    border-color: rgba(255,255,255,0.25);
+    transform: translateY(-4px);
+}
+
+.div-tarjeta img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85);
+    transition: filter 0.3s;
+}
+
+.div-tarjeta:hover img {
+    filter: brightness(0.6);
+}
+
+.div-tarjeta h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem 0;
+}
+
+.div-tarjeta p {
+    color: #b0b8c1;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.div-tarjeta .info-tarjeta {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(10,10,20,0.95) 60%, transparent);
+}
+
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.tecnologias span {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #b0b8c1;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+}
+
+.footer-proyectos {
+    padding-left: 36rem;
+}
+
+/* ══════════════════════════════════════
+CONTACTO
+   ══════════════════════════════════════ */
+form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.div-contacto {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.div-contacto label { display: none; }
+
+.div-contacto input,
+.div-contacto textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+    outline: none;
+    width: 100%;
+    font-family: sans-serif;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+.div-contacto input::placeholder,
+.div-contacto textarea::placeholder {
+    color: rgba(255,255,255,0.3);
+}
+
+.div-contacto input:focus,
+.div-contacto textarea:focus {
+    border-color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.07);
+}
+
+.div-contacto textarea {
+    min-height: 140px;
+    resize: none;
+}
+
+button[type="submit"] {
+    margin-top: 2rem;
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #ffffff;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    padding: 0.85rem 2.5rem;
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.6);
+}
+
+.a-contacto {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.a-contacto a {
+    color: #b0b8c1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.a-contacto a:hover { color: #ffffff; }
+
+/* ══════════════════════════════════════
+ACERCA DE MÍ
+   ══════════════════════════════════════ */
+.acerca-de-mi > nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+/* ══════════════════════════════════════
+CURRICULUM
+   ══════════════════════════════════════ */
+.a-curriculum {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* ══════════════════════════════════════
+EFECTO GLITCH EN H1
+   ══════════════════════════════════════ */
+h1::before,
+h1::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+h1::before {
+    color: rgba(255, 100, 200, 1);
+    animation: glitch-1 3s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+}
+
+h1::after {
+    color: rgba(100, 220, 255, 1);
+    animation: glitch-2 1s infinite;
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch-1 {
+    0%, 90%, 100% { transform: translate(0); }
+    92%           { transform: translate(-14px, 2px); }
+    94%           { transform: translate(14px, -2px); }
+    96%           { transform: translate(-7px, 4px); }
+}
+
+@keyframes glitch-2 {
+    0%, 90%, 100% { transform: translate(0); }
+    92%           { transform: translate(14px, -2px); }
+    94%           { transform: translate(-14px, 2px); }
+    96%           { transform: translate(7px, -4px); }
+}
