@@ -2,16 +2,15 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width= device-width, initial-scale=1.0">
-    <title>mi pagina</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos – Simón Acevedo</title>
     <link rel="stylesheet" href="CSS/styles.css">
-    
 </head>
 <body class="page-proyectos">
     <header class="inicio">
         <div>
             <a href="index.html">
-                <img src="IMG/ast.png.png">
+                <img src="IMG/ast.png.png" alt="Logo">
             </a>
         </div>
         <div>
@@ -24,18 +23,18 @@
         </div>
     </header>
     <main class="main-proyectos">
-        <h1> PROYECTOS. </h1>
+        <h1>PROYECTOS.</h1>
 
         <div class="filtros-proyectos">
             <button>Todos</button>
             <button>Web</button>
             <button>Diseño</button>
-            <button>Open codigo habierto</button>
+            <button>Código abierto</button>
         </div>
 
         <div class="proyectos-simon">
 
-            <div class="div-tarjeta">
+            <div class="div-tarjeta" onclick="abrirDrawer(0)">
                 <img src="IMG/proyecto1.png" alt="Proyecto 1">
                 <div class="info-tarjeta">
                     <h3>Nombre del proyecto</h3>
@@ -48,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="div-tarjeta">
+            <div class="div-tarjeta" onclick="abrirDrawer(1)">
                 <img src="IMG/proyecto2.png" alt="Proyecto 2">
                 <div class="info-tarjeta">
                     <h3>Nombre del proyecto</h3>
@@ -60,7 +59,7 @@
                 </div>
             </div>
 
-            <div class="div-tarjeta">
+            <div class="div-tarjeta" onclick="abrirDrawer(2)">
                 <img src="IMG/proyecto3.png" alt="Proyecto 3">
                 <div class="info-tarjeta">
                     <h3>Nombre del proyecto</h3>
@@ -72,7 +71,7 @@
                 </div>
             </div>
 
-            <div class="div-tarjeta">
+            <div class="div-tarjeta" onclick="abrirDrawer(3)">
                 <img src="IMG/proyecto4.png" alt="Proyecto 4">
                 <div class="info-tarjeta">
                     <h3>Nombre del proyecto</h3>
@@ -87,21 +86,120 @@
 
         </div>
     </main>
+
+    <!-- DRAWER -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="cerrarDrawer()"></div>
+    <aside class="drawer" id="drawer">
+        <div class="drawer-header">
+            <button class="drawer-back" onclick="cerrarDrawer()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M15 12H9M9 12l3-3M9 12l3 3"/>
+                </svg>
+            </button>
+            <span class="drawer-back-label">Back To Projects.</span>
+        </div>
+        <div class="drawer-content">
+            <h2 class="drawer-titulo" id="drawerTitulo"></h2>
+            <p class="drawer-desc" id="drawerDesc"></p>
+            <img class="drawer-img" id="drawerImg" src="" alt="">
+            <h4 class="drawer-about-title">About</h4>
+            <p class="drawer-about" id="drawerAbout"></p>
+            <h4 class="drawer-tech-title">Technologies</h4>
+            <div class="tecnologias drawer-techs" id="drawerTechs"></div>
+        </div>
+        <div class="drawer-footer">
+            <a class="drawer-open-btn" id="drawerLink" href="#" target="_blank">
+                Open Project
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                    <polyline points="15 3 21 3 21 9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+            </a>
+        </div>
+    </aside>
+
     <footer class="footer-proyectos">
         <div class="div-vamos-curri">
-            <a href="CURICULUM.html"> vamos a mi curriculum→ </a>
+            <a href="CURICULUM.html">vamos a mi curriculum →</a>
         </div>
         <div>
             <a class="icono-ig" href="https://www.instagram.com/simon.taborda15/">
-                <img src="IMG/instagram (1).png">
+                <img src="IMG/instagram (1).png" alt="Instagram">
             </a>
             <a class="icono-git" href="https://github.com/simonacevedotb-ai">
-                <img src="IMG/github (1).png"GitHub">
+                <img src="IMG/github (1).png" alt="GitHub">
             </a>
             <a class="icono-face" href="https://www.facebook.com/simon.acevedo.2025/">
-                <img src="IMG/facebook (1).png">
+                <img src="IMG/facebook (1).png" alt="Facebook">
             </a>
         </div>
     </footer>
+
+    <script>
+        const proyectos = [
+            {
+                titulo: "Nombre del proyecto",
+                desc: "Descripción corta del proyecto y para qué sirve.",
+                img: "IMG/proyecto1.png",
+                about: "Aquí puedes escribir una descripción más larga sobre este proyecto, qué problema resuelve, cómo lo construiste y qué aprendiste en el proceso.",
+                techs: ["HTML", "CSS", "JavaScript"],
+                link: "#"
+            },
+            {
+                titulo: "Nombre del proyecto",
+                desc: "Descripción corta del proyecto y para qué sirve.",
+                img: "IMG/proyecto2.png",
+                about: "Aquí puedes escribir una descripción más larga sobre este proyecto, qué problema resuelve, cómo lo construiste y qué aprendiste en el proceso.",
+                techs: ["React", "CSS"],
+                link: "#"
+            },
+            {
+                titulo: "Nombre del proyecto",
+                desc: "Descripción corta del proyecto y para qué sirve.",
+                img: "IMG/proyecto3.png",
+                about: "Aquí puedes escribir una descripción más larga sobre este proyecto, qué problema resuelve, cómo lo construiste y qué aprendiste en el proceso.",
+                techs: ["Vue", "JavaScript"],
+                link: "#"
+            },
+            {
+                titulo: "Nombre del proyecto",
+                desc: "Descripción corta del proyecto y para qué sirve.",
+                img: "IMG/proyecto4.png",
+                about: "Aquí puedes escribir una descripción más larga sobre este proyecto, qué problema resuelve, cómo lo construiste y qué aprendiste en el proceso.",
+                techs: ["HTML", "Sass", "JavaScript"],
+                link: "#"
+            }
+        ];
+
+        function abrirDrawer(index) {
+            const p = proyectos[index];
+            document.getElementById('drawerTitulo').textContent = p.titulo;
+            document.getElementById('drawerDesc').textContent = p.desc;
+            document.getElementById('drawerImg').src = p.img;
+            document.getElementById('drawerImg').alt = p.titulo;
+            document.getElementById('drawerAbout').textContent = p.about;
+            document.getElementById('drawerLink').href = p.link;
+
+            const techsEl = document.getElementById('drawerTechs');
+            techsEl.innerHTML = p.techs.map(t => `<span>${t}</span>`).join('');
+
+            document.getElementById('drawer').classList.add('drawer-abierto');
+            document.getElementById('drawerOverlay').classList.add('visible');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function cerrarDrawer() {
+            document.getElementById('drawer').classList.remove('drawer-abierto');
+            document.getElementById('drawerOverlay').classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') cerrarDrawer();
+        });
+    </script>
+    <script src="JS/cursor.js"></script>
 </body>
 </html>

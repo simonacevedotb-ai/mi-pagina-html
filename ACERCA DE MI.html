@@ -2,15 +2,15 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width= device-width, initial-scale=1.0">
-    <title>mi pagina</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de mí – Simón Acevedo</title>
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body class="page-about">
-    <header  class="inicio">
+    <header class="inicio">
         <div>
             <a href="index.html">
-                <img src="IMG/ast.png.png">
+                <img src="IMG/ast.png.png" alt="Logo">
             </a>
         </div>
         <div>
@@ -21,39 +21,83 @@
                 </ul>
             </nav>
         </div>
-        </div>
     </header>
-    <main>
-        <h1> ACERCA DE MÍ. </h1>
-        <div class="acerca-de-mi">
-            <nav>
-                <ul>
-                    <li><a href="https://github.com/simonacevedotb-ai" >Ingenieria <img src="IMG/logo git hub.png" alt=""></a>></li>
-                    <li><a href="https://github.com/simonacevedotb-ai">Ver GITHUB</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div>
-            <p>El poder de la primera impresión es innegable, y la clave para aprovecharla al máximo reside en un diseño web excepcional. Un sitio web excepcional trasciende la mera estética y amplía su influencia para abarcar una funcionalidad fluida y una navegación intuitiva.
-                Gracias a mi experiencia como programador experimentado, poseo la capacidad única de abordar complejos desafíos técnicos mientras creo sitios web que irradian elegancia y atractivo visual. Además, mi amplio conocimiento de los estándares técnicos reconocidos se 
-                complementa con mi dominio de las prácticas de desarrollo modernas, lo que garantiza que cada aspecto de su sitio web esté perfectamente optimizado.</p>
+
+    <main class="main-about">
+        <h1>ACERCA DE MÍ.</h1>
+
+        <div class="about-secciones">
+
+            <!-- Sección 1: Ingeniería -->
+            <div class="about-item">
+                <div class="about-item-header">
+                    <div class="about-item-titulo">
+                        <span class="about-bullet">○</span>
+                        <h2>Ingeniería
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="about-icono">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+                            </svg>
+                        </h2>
+                    </div>
+                    <a href="https://github.com/simonacevedotb-ai" target="_blank" class="about-link">Ver Github</a>
+                </div>
+                <p class="about-texto">El poder de la primera impresión es innegable, y la clave para aprovecharla al máximo reside en un diseño web excepcional. Un sitio web excepcional trasciende la mera estética y amplía su influencia para abarcar una funcionalidad fluida y una navegación intuitiva. Gracias a mi experiencia como programador experimentado, poseo la capacidad única de abordar complejos desafíos técnicos mientras creo sitios web que irradian elegancia y atractivo visual. Además, mi amplio conocimiento de los estándares técnicos reconocidos se complementa con mi dominio de las prácticas de desarrollo modernas, lo que garantiza que cada aspecto de su sitio web esté perfectamente optimizado.</p>
+            </div>
+
+            <!-- Sección 2: Producto -->
+            <div class="about-item">
+                <div class="about-item-header">
+                    <div class="about-item-titulo">
+                        <span class="about-bullet">○</span>
+                        <h2>Producto
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="about-icono">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </h2>
+                    </div>
+                    <a href="PROYECTOS.html" class="about-link">Ver Proyectos</a>
+                </div>
+                <p class="about-texto">Aunque pueda no encajar en el molde convencional de un product manager, mi diverso conjunto de habilidades en investigación, diseño de producto y coordinación me permite impulsar el crecimiento de un producto desde su concepción. Como pensador analítico excepcional, poseo la capacidad de mantener la visión del producto a lo largo de todo su ciclo de vida, conectando eficazmente los aspectos técnicos y de negocio. Aprovechando mi experiencia, puedo navegar el camino de 0 a 1 garantizando el éxito del producto en cada etapa.</p>
+            </div>
+
+            <!-- Sección 3: Diseño -->
+            <div class="about-item">
+                <div class="about-item-header">
+                    <div class="about-item-titulo">
+                        <span class="about-bullet">○</span>
+                        <h2>Diseño
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="about-icono">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+                            </svg>
+                        </h2>
+                    </div>
+                    <a href="PROYECTOS.html" class="about-link">Ver Diseños</a>
+                </div>
+                <p class="about-texto">A pesar de no encajar en el perfil típico de diseñador, mi formación multidisciplinar me permite sobresalir como presentador, comunicando eficazmente los conceptos de diseño a stakeholders y equipos. Poseo una notable capacidad de conceptualización que me permite visualizar y dar forma a ideas abstractas en soluciones concretas y visualmente atractivas. Mi enfoque combina la estética con la funcionalidad, siempre buscando crear experiencias de usuario que sean tanto hermosas como intuitivas.</p>
+            </div>
+
         </div>
     </main>
+
     <footer>
         <div class="div-vamos-curri">
             <a href="PROYECTOS.html">continuemos con los proyectos →</a>
         </div>
         <div>
             <a class="icono-ig" href="https://www.instagram.com/simon.taborda15/">
-                <img src="IMG/instagram (1).png">
+                <img src="IMG/instagram (1).png" alt="Instagram">
             </a>
             <a class="icono-git" href="https://github.com/simonacevedotb-ai">
-                <img src="IMG/github (1).png"GitHub">
+                <img src="IMG/github (1).png" alt="GitHub">
             </a>
             <a class="icono-face" href="https://www.facebook.com/simon.acevedo.2025/">
-                <img src="IMG/facebook (1).png">
+                <img src="IMG/facebook (1).png" alt="Facebook">
             </a>
         </div>
     </footer>
+    <script src="JS/cursor.js"></script>
 </body>
 </html>
